@@ -8,6 +8,123 @@ index.html
 <title>🇮🇳 Happy Independence Day 2026 🇮🇳</title>
 
 <style>
+  .bannerBox{
+position:relative;
+overflow:hidden;
+border-radius:20px;
+}
+
+.jetFly{
+position:absolute;
+width:90px;
+z-index:20;
+pointer-events:none;
+filter:drop-shadow(0 0 12px rgba(255,255,255,.8));
+}
+
+.jet1{
+top:20px;
+left:-120px;
+animation:airshow1 8s linear infinite;
+}
+
+.jet2{
+top:90px;
+left:-180px;
+animation:airshow2 10s linear infinite;
+}
+
+@keyframes airshow1{
+0%{
+left:-150px;
+transform:rotate(8deg) scale(.9);
+}
+100%{
+left:120%;
+transform:rotate(8deg) scale(1.1);
+}
+}
+
+@keyframes airshow2{
+0%{
+left:-250px;
+transform:rotate(5deg);
+}
+100%{
+left:120%;
+transform:rotate(5deg);
+}
+}
+
+/* Tiranga Smoke */
+
+.smoke{
+position:absolute;
+height:12px;
+border-radius:20px;
+z-index:15;
+opacity:.8;
+}
+
+.smoke1{
+top:55px;
+left:-300px;
+width:320px;
+
+background:
+linear-gradient(
+90deg,
+#ff9933,
+#ffffff,
+#138808
+);
+
+animation:smokeMove1 8s linear infinite;
+}
+
+.smoke2{
+top:125px;
+left:-350px;
+width:350px;
+
+background:
+linear-gradient(
+90deg,
+#ff9933,
+#ffffff,
+#138808
+);
+
+animation:smokeMove2 10s linear infinite;
+}
+
+@keyframes smokeMove1{
+0%{
+left:-320px;
+opacity:0;
+}
+15%{
+opacity:.9;
+}
+100%{
+left:120%;
+opacity:0;
+}
+}
+
+@keyframes smokeMove2{
+0%{
+left:-350px;
+opacity:0;
+}
+15%{
+opacity:.9;
+}
+100%{
+left:120%;
+opacity:0;
+}
+}
 *{
 margin:0;
 padding:0;
@@ -187,13 +304,17 @@ transform:translateY(-100px);
 <h1>Happy Independence Day</h1>
 </div>
 
-<div class="adbox">
-Google AdSense Area
+<div class="bannerBox">
+
+    <div class="smoke smoke1"></div>
+    <div class="smoke smoke2"></div>
+
+    <img src="rafale.png" class="jetFly jet1">
+    <img src="rafale.png" class="jetFly jet2">
+
+    <img src="banner.webp" alt="Independence Day Banner">
+
 </div>
-
-<div id="receiver" class="receiver"></div>
-
-<div class="card">
 
 <h3>Apna Naam Likhiye</h3>
 
