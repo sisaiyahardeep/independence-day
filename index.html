@@ -235,13 +235,23 @@ Copy Link
 <div class="adbox">
 Google AdSense Area
 </div>
-
+<audio id="bgmusic" autoplay loop>
+</audio>
 <div class="footer">
 🇮🇳 Jai Hind 🇮🇳
 </div>
 
 <script>
+const songs = [
+"song1.mp3",
+"song2.mp3",
+"song3.mp3",
+"song4.mp3",
+"song5.mp3"
+];
 
+const randomSong =
+songs[Math.floor(Math.random() * songs.length)];
 const wishes = [
 
 "Azaadi ke is pavitra parv par aapko aur aapke parivar ko hardik shubhkamnayein. Jai Hind 🇮🇳",
@@ -343,7 +353,7 @@ document.getElementById("particles")
 .appendChild(dot);
 
 }
-
+document.getElementById("bgmusic").src = randomSong;
 </script>
 
 </body>
