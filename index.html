@@ -1,481 +1,119 @@
-index.html
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🇮🇳 Happy Independence Day 2026 🇮🇳</title>
-
+<title>Happy Independence Day 🇮🇳</title>
 <style>
-  .bannerBox{
-position:relative;
-overflow:hidden;
-border-radius:20px;
-}
-
-.jetFly{
-position:absolute;
-width:90px;
-z-index:20;
-pointer-events:none;
-filter:drop-shadow(0 0 12px rgba(255,255,255,.8));
-}
-
-.jet1{
-top:20px;
-left:-120px;
-animation:airshow1 8s linear infinite;
-}
-
-.jet2{
-top:90px;
-left:-180px;
-animation:airshow2 10s linear infinite;
-}
-
-@keyframes airshow1{
-0%{
-left:-150px;
-transform:rotate(8deg) scale(.9);
-}
-100%{
-left:120%;
-transform:rotate(8deg) scale(1.1);
-}
-}
-
-@keyframes airshow2{
-0%{
-left:-250px;
-transform:rotate(5deg);
-}
-100%{
-left:120%;
-transform:rotate(5deg);
-}
-}
-
-/* Tiranga Smoke */
-
-.smoke{
-position:absolute;
-height:12px;
-border-radius:20px;
-z-index:15;
-opacity:.8;
-}
-
-.smoke1{
-top:55px;
-left:-300px;
-width:320px;
-
-background:
-linear-gradient(
-90deg,
-#ff9933,
-#ffffff,
-#138808
-);
-
-animation:smokeMove1 8s linear infinite;
-}
-
-.smoke2{
-top:125px;
-left:-350px;
-width:350px;
-
-background:
-linear-gradient(
-90deg,
-#ff9933,
-#ffffff,
-#138808
-);
-
-animation:smokeMove2 10s linear infinite;
-}
-
-@keyframes smokeMove1{
-0%{
-left:-320px;
-opacity:0;
-}
-15%{
-opacity:.9;
-}
-100%{
-left:120%;
-opacity:0;
-}
-}
-
-@keyframes smokeMove2{
-0%{
-left:-350px;
-opacity:0;
-}
-15%{
-opacity:.9;
-}
-100%{
-left:120%;
-opacity:0;
-}
-}
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{
-background:linear-gradient(135deg,#ff9933,#ffffff,#138808);
-min-height:100vh;
-overflow-x:hidden;
-text-align:center;
-color:#111;
+background:linear-gradient(180deg,#ff9933,#ffffff,#138808);
+min-height:100vh;overflow-x:hidden;padding:12px;text-align:center
 }
-
-.hero{
-padding:20px;
-}
-
-.flag{
-font-size:70px;
-animation:wave 2s infinite;
-}
-
-@keyframes wave{
-0%{transform:rotate(0deg);}
-25%{transform:rotate(5deg);}
-50%{transform:rotate(0deg);}
-75%{transform:rotate(-5deg);}
-100%{transform:rotate(0deg);}
-}
-
-h1{
-margin-top:10px;
-font-size:30px;
-}
-
+.flag{position:fixed;top:10px;width:60px;z-index:1000;animation:wave 2s infinite}
+.left{left:10px}.right{right:10px}
+@keyframes wave{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
 .card{
-width:92%;
-max-width:500px;
-margin:20px auto;
-padding:20px;
-background:rgba(255,255,255,0.25);
-backdrop-filter:blur(12px);
-border-radius:20px;
-box-shadow:0 8px 25px rgba(0,0,0,.15);
+max-width:700px;margin:auto;background:rgba(255,255,255,.2);
+backdrop-filter:blur(12px);border-radius:24px;padding:15px;
+box-shadow:0 10px 30px rgba(0,0,0,.2)
 }
-
-input{
-width:100%;
-padding:14px;
-font-size:18px;
-border:none;
-border-radius:12px;
-margin-top:10px;
+.hero{position:relative;overflow:hidden;border-radius:20px}
+.hero .banner{width:100%;display:block}
+.jet{position:absolute;width:180px;z-index:5}
+.jet1{top:15px;left:-220px;animation:fly1 5s linear infinite}
+.jet2{top:90px;left:-300px;animation:fly2 6s linear infinite}
+@keyframes fly1{from{left:-220px}to{left:120%}}
+@keyframes fly2{from{left:-300px}to{left:120%}}
+.bigflag{font-size:70px;margin:10px 0;animation:wave 2s infinite}
+h1{margin:10px 0}
+input,button{width:100%;padding:14px;border-radius:12px;border:none;margin-top:10px}
+button{background:#138808;color:#fff;font-weight:bold}
+#wish{margin-top:15px;font-size:20px;line-height:1.5}
+.balloon{
+position:fixed;bottom:-80px;width:32px;height:42px;border-radius:50%;
+animation:floatUp linear forwards;z-index:1
 }
-
-button{
-padding:14px 20px;
-border:none;
-border-radius:12px;
-font-size:16px;
-cursor:pointer;
-margin:8px;
-font-weight:bold;
+.balloon:after{
+content:"";position:absolute;left:15px;top:40px;width:2px;height:24px;background:#666;
 }
-
-.generate{
-background:#138808;
-color:white;
-}
-
-.share{
-background:#25D366;
-color:white;
-}
-
-.copy{
-background:#000;
-color:white;
-}
-
-.adbox{
-width:92%;
-max-width:500px;
-height:90px;
-margin:15px auto;
-background:white;
-border:2px dashed #999;
-display:flex;
-justify-content:center;
-align-items:center;
-border-radius:12px;
-}
-
-.jet{
-position:fixed;
-top:80px;
-left:-150px;
-font-size:45px;
-animation:fly 12s linear infinite;
-}
-
-@keyframes fly{
-0%{
-left:-150px;
-}
-100%{
-left:120%;
-}
-}
-
-.hidden{
-display:none;
-}
-
-#wishCard h2{
-margin:15px 0;
-color:#ff6600;
-}
-
-#wishCard p{
-font-size:18px;
-line-height:1.6;
-}
-
-.receiver{
-font-size:20px;
-font-weight:bold;
-margin:15px;
-color:#003366;
-}
-
-.footer{
-padding:20px;
-font-weight:bold;
-}
-
-.particles{
-position:fixed;
-width:100%;
-height:100%;
-pointer-events:none;
-overflow:hidden;
-top:0;
-left:0;
-}
-
-.dot{
-position:absolute;
-width:6px;
-height:6px;
-background:white;
-border-radius:50%;
-animation:float 10s linear infinite;
-opacity:.7;
-}
-
-@keyframes float{
-0%{
-transform:translateY(100vh);
-}
-100%{
-transform:translateY(-100px);
-}
+@keyframes floatUp{
+from{transform:translateY(0)}
+to{transform:translateY(-120vh)}
 }
 </style>
 </head>
 <body>
 
-<div class="particles" id="particles"></div>
+<img class="flag left" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg">
+<img class="flag right" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg">
 
-<div class="jet">✈️</div>
-
+<div class="card">
 <div class="hero">
-<div class="flag">🇮🇳</div>
-<h1>Happy Independence Day</h1>
+<img src="rafale.png" class="jet jet1">
+<img src="rafale.png" class="jet jet2">
+<img src="banner.webp" class="banner" alt="Banner">
 </div>
 
-<div class="bannerBox">
+<div class="bigflag">🇮🇳</div>
+<h1>Happy Independence Day 🇮🇳</h1>
 
-    <div class="smoke smoke1"></div>
-    <div class="smoke smoke2"></div>
+<input id="name" placeholder="Enter Your Name">
+<button onclick="generateWish()">Generate Wish</button>
+<button onclick="shareWhatsApp()">Share on WhatsApp</button>
 
-    <img src="rafale.png" class="jetFly jet1">
-    <img src="rafale.png" class="jetFly jet2">
-
-    <img src="banner.webp" alt="Independence Day Banner">
-
-</div>
-
-<h3>Apna Naam Likhiye</h3>
-
-<input
-type="text"
-id="nameInput"
-placeholder="Enter Your Name">
-
-<button class="generate" onclick="generateWish()">
-Generate Wish
-</button>
-
-</div>
-
-<div id="wishCard" class="card hidden">
-
-<h2 id="wishName"></h2>
-
-<p id="wishMessage"></p>
-
-</div>
-
-<div class="adbox">
-Google AdSense Area
-</div>
-
-<div id="shareBox" class="hidden">
-
-<button class="share" onclick="shareWhatsApp()">
-WhatsApp Share
-</button>
-
-<button class="copy" onclick="copyLink()">
-Copy Link
-</button>
-
-</div>
-
-<div class="adbox">
-Google AdSense Area
-</div>
-<audio id="bgmusic" autoplay loop>
-</audio>
-<div class="footer">
-🇮🇳 Jai Hind 🇮🇳
+<div id="wish"></div>
 </div>
 
 <script>
-const songs = [
-"song1.mp3",
-"song2.mp3",
-"song3.mp3",
-"song4.mp3",
-"song5.mp3"
+const songs=["song1.mp3","song2.mp3","song3.mp3","song4.mp3","song5.mp3"];
+const messages=[
+"🇮🇳 उन वीर शहीदों को नमन, जिनकी कुर्बानी से आज हम आज़ाद हैं।",
+"🇮🇳 तिरंगे की शान हमेशा ऊँची रहे।",
+"🇮🇳 मिट्टी की खुशबू और देश के वीरों को सलाम।",
+"🇮🇳 आज़ादी सिर्फ जश्न नहीं, बलिदान की याद है।",
+"🇮🇳 भारत माता की जय। Happy Independence Day!"
 ];
 
-const randomSong =
-songs[Math.floor(Math.random() * songs.length)];
-const wishes = [
+const audio=new Audio(songs[Math.floor(Math.random()*songs.length)]);
+audio.loop=true;
+window.addEventListener("load",()=>audio.play().catch(()=>{}));
 
-"Azaadi ke is pavitra parv par aapko aur aapke parivar ko hardik shubhkamnayein. Jai Hind 🇮🇳",
+let currentMessage="";
 
-"Veer jawano ke balidan ko naman. Garv se kaho hum Bharatiya hain. Happy Independence Day 🇮🇳",
-
-"Tirange ki shaan hamesha buland rahe. Aapko Swatantrata Diwas ki dher saari badhaiyan 🇮🇳"
-
-];
-
-let generatedLink="";
-
-function generateWish(){
-document.getElementById("bgmusic").play();
-let name=document.getElementById("nameInput").value.trim();
-
-if(name==""){
-alert("Apna naam likhiye");
-return;
+const p=new URLSearchParams(location.search);
+const from=p.get("from");
+const msg=p.get("msg");
+if(from && msg){
+document.getElementById("wish").innerHTML="🇮🇳 <b>"+from+"</b> ki taraf se<br><br>"+decodeURIComponent(msg);
 }
 
-let random=wishes[Math.floor(Math.random()*wishes.length)];
-
-document.getElementById("wishName").innerHTML=
-"🇮🇳 "+name+" ki taraf se";
-
-document.getElementById("wishMessage").innerHTML=
-random;
-
-document.getElementById("wishCard")
-.classList.remove("hidden");
-
-document.getElementById("shareBox")
-.classList.remove("hidden");
-
-generatedLink=
-window.location.origin+
-window.location.pathname+
-"?name="+encodeURIComponent(name);
-
+function generateWish(){
+const name=document.getElementById("name").value.trim();
+if(!name){alert("Enter your name");return;}
+audio.play().catch(()=>{});
+currentMessage=messages[Math.floor(Math.random()*messages.length)];
+document.getElementById("wish").innerHTML=currentMessage+"<br><br><b>— "+name+"</b>";
 }
 
 function shareWhatsApp(){
-
-if(generatedLink==""){
-alert("Pehle wish generate kijiye");
-return;
+const name=document.getElementById("name").value.trim();
+if(!name || !currentMessage){alert("Generate wish first");return;}
+const link=location.origin+location.pathname+"?from="+encodeURIComponent(name)+"&msg="+encodeURIComponent(currentMessage);
+const text=currentMessage+"\n\n— "+name+"\n\n"+link;
+window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank");
 }
 
-window.open(
-"https://wa.me/?text="+
-encodeURIComponent(
-"🇮🇳 Happy Independence Day 🇮🇳\n"+generatedLink
-)
-);
-
-}
-
-function copyLink(){
-
-if(generatedLink==""){
-alert("Pehle wish generate kijiye");
-return;
-}
-
-navigator.clipboard.writeText(generatedLink);
-
-alert("Link copied");
-}
-
-const params=
-new URLSearchParams(window.location.search);
-
-const sender=params.get("name");
-
-if(sender){
-
-document.getElementById("receiver").innerHTML=
-"🇮🇳 "+sender+
-" ne aapko Independence Day ki shubhkamnayein bheji hain";
-
-}
-
-for(let i=0;i<35;i++){
-
-let dot=document.createElement("div");
-
-dot.className="dot";
-
-dot.style.left=Math.random()*100+"%";
-
-dot.style.animationDuration=
-(5+Math.random()*10)+"s";
-
-dot.style.animationDelay=
-Math.random()*5+"s";
-
-document.getElementById("particles")
-.appendChild(dot);
-
-}
-document.getElementById("bgmusic").src = randomSong;
+const colors=["#FF9933","#FFFFFF","#138808"];
+setInterval(()=>{
+const b=document.createElement("div");
+b.className="balloon";
+b.style.left=Math.random()*100+"vw";
+b.style.background=colors[Math.floor(Math.random()*colors.length)];
+b.style.animationDuration=(8+Math.random()*6)+"s";
+document.body.appendChild(b);
+setTimeout(()=>b.remove(),15000);
+},600);
 </script>
-
 </body>
 </html>
